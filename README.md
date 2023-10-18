@@ -25,11 +25,11 @@ Reporte de Bug:
    
 OBSERVAR que los dos ultimos productos de la lista NO ESTAN ordenados por precio ($29482 y $41761)
 
-5. Resultado esperado: que los productos de la lista esten ordenados de MENOR A MAYOR, en el rango de $0 a $60.000
+4. Resultado esperado: que los productos de la lista esten ordenados de MENOR A MAYOR, en el rango de $0 a $60.000
    
-6. Resultado actual: productos ordenados de menor a mayor SALVO los dos ultimos productos de la lista ($29482 y $41761)
+5. Resultado actual: productos ordenados de menor a mayor SALVO los dos ultimos productos de la lista ($29482 y $41761)
    
-7. Prueba visual: checkear link https://listado.mercadolibre.com.ar/_CostoEnvio_Gratis_TiempoEnvio_EnElDia_OrderId_PRICE_PriceRange_0-60000_Deal_semana-del-repuesto-original_Installments_CampaignAhora_NoIndex_True?button=
+6. Prueba visual: checkear link https://listado.mercadolibre.com.ar/_CostoEnvio_Gratis_TiempoEnvio_EnElDia_OrderId_PRICE_PriceRange_0-60000_Deal_semana-del-repuesto-original_Installments_CampaignAhora_NoIndex_True?button=
     
 8. Severidad/Prioridad: Utilizando el sistema de Fibonacci, otorgo el puntaje de 8 a este bug (baja prioridad / bajo impacto), ya que no detiene el proceso de compra, y de acuerdo al monitoreo de clientes efectuado por Salesforce, un bajo porcentaje de usuarios utiliza estos filtros
 
@@ -45,7 +45,8 @@ Fin respuesta 1.1
 ---------------------------------------------------------------------------------------------------------------	
 					
 1.2 Ejercicio 2: Automatización de una web 
-Debes realizar una automatización consistente en:	
+Debes realizar una automatización consistente en:
+
 - Buscar en Google la palabra “automatización”
 Using python and Selenium, the code would be something like:
 from selenium import webdriver
@@ -175,7 +176,7 @@ else:
 					
 https://petstore.swagger.io/
 					
-Crea tu usuario mediante petición HTTP y posteriormente recupera sus datos llamando al servicio correspondiente.
+- Crea tu usuario mediante petición HTTP y posteriormente recupera sus datos llamando al servicio correspondiente.
 
 utilizando el endpoint POST /user/createWithArray, envio el siguiente request (mejora: crear usuario en forma ordenada)
 
@@ -206,7 +207,7 @@ Para recuperar datos, utilizo el endpoint GET /user/{username}, mediante el sigu
 }
 
        
-Recoge mediante petición HTTP, el JSON que retorna el endpoint /pet/findByStatus y lista mediante una función los nombres de las mascotas que se hayan vendido.
+- Recoge mediante petición HTTP, el JSON que retorna el endpoint /pet/findByStatus y lista mediante una función los nombres de las mascotas que se hayan vendido.
 
 el JSON que retorna el endpoint es:
 [
@@ -256,7 +257,7 @@ el nombre de las mascotas que se vendieron, listadas mediante funcion, se consig
 									
 -  Puedes utilizar la estructura de datos que prefieras.
  													 						
-Crea una clase cuyo constructor requiera de la estructura de datos anterior y realiza un método que pueda recorrerla para poder identificar cuantas mascotas se llaman igual.
+- Crea una clase cuyo constructor requiera de la estructura de datos anterior y realiza un método que pueda recorrerla para poder identificar cuantas mascotas se llaman igual.
 using python, would be something like:
 
 import requests
