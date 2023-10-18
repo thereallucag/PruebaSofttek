@@ -10,16 +10,22 @@ Reporte de Bug:
 1. Titulo y ID: 'Orden de Menor a Mayor en sitio mercadolibre.com.ar no funciona o muestra duplicados' Ticket Nro XXXX (creado en JIRA o similar)
 2. Entorno/Ambiente donde fue encontrado: Produccion (tambien podria ser QA o PreProd, depende de donde se este probando. NOTA: al ser PROD, el bug se llama 'incidente' en vez de bug, ya que toma una seriedad/relevancia/impacto distinta/o)
 3. Pasos para reproducir el bug:
+   
    a. ingresar en www.mercadolibre.com.ar
+   
    b. hacer clic en boton 'hasta 35% off'
+   
    c. marcar los siguientes radiobotones: - Llegan hoy, - Envio Gratis, - Programa Ahora 12
+   
    d. Filtrar por precio '0 hasta 60.000'
+   
    e. Ordenar por 'Menor precio'
+   
 OBSERVAR que los dos ultimos productos de la lista NO ESTAN ordenados por precio ($29482 y $41761)
-4. Resultado esperado: que los productos de la lista esten ordenados de MENOR A MAYOR, en el rango de $0 a $60.000
-5. Resultado actual: productos ordenados de menor a mayor SALVO los dos ultimos productos de la lista ($29482 y $41761)
-6. Prueba visual: checkear link https://listado.mercadolibre.com.ar/_CostoEnvio_Gratis_TiempoEnvio_EnElDia_OrderId_PRICE_PriceRange_0-60000_Deal_semana-del-repuesto-original_Installments_CampaignAhora_NoIndex_True?button=
-7. Severidad/Prioridad: Utilizando el sistema de Fibonacci, otorgo el puntaje de 8 a este bug (baja prioridad / bajo impacto), ya que no detiene el proceso de compra, y de acuerdo al monitoreo de clientes efectuado por Salesforce, un bajo porcentaje de usuarios utiliza estos filtros
+5. Resultado esperado: que los productos de la lista esten ordenados de MENOR A MAYOR, en el rango de $0 a $60.000
+6. Resultado actual: productos ordenados de menor a mayor SALVO los dos ultimos productos de la lista ($29482 y $41761)
+7. Prueba visual: checkear link https://listado.mercadolibre.com.ar/_CostoEnvio_Gratis_TiempoEnvio_EnElDia_OrderId_PRICE_PriceRange_0-60000_Deal_semana-del-repuesto-original_Installments_CampaignAhora_NoIndex_True?button=
+8. Severidad/Prioridad: Utilizando el sistema de Fibonacci, otorgo el puntaje de 8 a este bug (baja prioridad / bajo impacto), ya que no detiene el proceso de compra, y de acuerdo al monitoreo de clientes efectuado por Salesforce, un bajo porcentaje de usuarios utiliza estos filtros
 
 BDD:
 Given I am a mercadolibre.com.ar user
