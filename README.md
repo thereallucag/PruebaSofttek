@@ -1,6 +1,6 @@
 # PruebaSofttek
 Prueba técnica de QA DEV
- 1.1 Ejercicio 1: Prueba exploratoria y reporte de bugs
+# 1.1 Ejercicio 1: Prueba exploratoria y reporte de bugs
 					
 La primera tarea es encontrar un bug, nos da igual en que web de internet lo encuentres, lo importante es poder encontrarlo y reportarlo. No te preocupes porque internet está lleno de ellos.			
 Haz el reporte al nivel de detalle que consideres necesario para que el equipo de desarrollo pueda encontrarlo, debuggearlo y solucionarlo. Proporciona evidencias del fallo y resultado esperado. Clasifícalo en cuanto a prioridad, impacto y probabilidad de ocurrencia.
@@ -44,55 +44,55 @@ Fin respuesta 1.1
 
 ---------------------------------------------------------------------------------------------------------------	
 					
-1.2 Ejercicio 2: Automatización de una web 
+# 1.2 Ejercicio 2: Automatización de una web 
 Debes realizar una automatización consistente en:
 
-- Buscar en Google la palabra “automatización”
+# Buscar en Google la palabra “automatización”
 Using python and Selenium, the code would be something like:
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-# Path to Chrome WebDriver executable
+Path to Chrome WebDriver executable
 webdriver_path = '/path/to/chromedriver'
 
-# Create a new instance of the Chrome driver
+Create a new instance of the Chrome driver
 driver = webdriver.Chrome(executable_path=webdriver_path)
 
-# Open Google's homepage
+Open Google's homepage
 driver.get('https://www.google.com')
 
-# Find the search box using its name attribute value
+Find the search box using its name attribute value
 search_box = driver.find_element('name', 'q')
 
-# Type the word "automatización" in the search box
+Type the word "automatización" in the search box
 search_box.send_keys('automatización')
 
-# Press Enter to perform the search
+Press Enter to perform the search
 search_box.send_keys(Keys.RETURN)
 
-# Wait for a few seconds to see the results
+Wait for a few seconds to see the results
 driver.implicitly_wait(5)
 
-# for result in search_results:
-#     print(result.text)
+ for result in search_results:
+     print(result.text)
 
-# Close the browser window
+ Close the browser window
 driver.quit()
 
-- Buscar el link de la Wikipedia resultante
+# - Buscar el link de la Wikipedia resultante
 Again, using python and selenium, this link search would be something like:
 
-# Locate the Wikipedia link in the search results (assuming it's the first result)
+ Locate the Wikipedia link in the search results (assuming it's the first result)
 wikipedia_link = driver.find_element_by_partial_link_text("Wikipedia")
 wikipedia_link.click()
  						
-- Comprobar en qué año se hizo el primer proceso automático
+# - Comprobar en qué año se hizo el primer proceso automático
 using python, and assuming requests beautifulsoup4 have been installed, it would be something like:
 import requests
 from bs4 import BeautifulSoup
 
 def get_first_automated_test_date(search_term):
-    # Wikipedia search URL
+     Wikipedia search URL
     search_url = f"https://es.wikipedia.org/wiki/{search_term}"
 
     # Send a GET request to the Wikipedia page
@@ -111,54 +111,54 @@ def get_first_automated_test_date(search_term):
 
     return "Information about the first automated test not found on the Wikipedia page."
 
-# Search term
+ Search term
 search_term = "automatización"
 
-# Get the first automated test date
+ Get the first automated test date
 automated_test_date = get_first_automated_test_date(search_term)
 
-# Print the result
+ Print the result
 print("Result:")
 print(automated_test_date)
  						
-- Realizar un screenshot de la página de la Wikipedia
+# - Realizar un screenshot de la página de la Wikipedia
 using python, and use the pyautogui library to take a screenshot of the search result
 Would be something like:
 import requests
 from bs4 import BeautifulSoup
 import pyautogui
 
-# Wikipedia search URL
+ Wikipedia search URL
 search_url = "https://es.wikipedia.org/wiki/Especial:Buscar"
 
-# Search query
+ Search query
 search_query = "automatización"
 
-# Send a GET request to the Wikipedia search page
+ Send a GET request to the Wikipedia search page
 response = requests.get(search_url, params={'search': search_query})
 
-# Parse the HTML content of the search result page
+ Parse the HTML content of the search result page
 soup = BeautifulSoup(response.text, 'html.parser')
 
-# Find the first search result link
+ Find the first search result link
 search_result = soup.find('li', class_='mw-search-result')
 
 if search_result:
-    # Extract the URL of the search result
+     Extract the URL of the search result
     result_url = "https://es.wikipedia.org" + search_result.a['href']
     
-    # Open the search result page
+     Open the search result page
     result_page = requests.get(result_url)
     result_soup = BeautifulSoup(result_page.text, 'html.parser')
     
-    # Find the main content area
+     Find the main content area
     content_div = result_soup.find('div', {'id': 'mw-content-text'})
     
-    # Scroll to the content area
+     Scroll to the content area
     pyautogui.click(x=50, y=50)  # Click on the top-left corner to focus the window
     pyautogui.scroll(-10)  # Scroll up to ensure the content area is visible
     
-    # Take a screenshot of the content area
+     Take a screenshot of the content area
     content_area = content_div.get('id', '')
     screenshot_path = f"screenshot_{content_area}.png"
     pyautogui.screenshot(screenshot_path, region=(0, 0, 1920, 1080))  # Adjust region based on your screen resolution
@@ -172,11 +172,11 @@ else:
 ---------------------------------------------------------------------------------------------------------------					 					
 
 
-1.3 Ejercicio 3: Tratamiento de datos en APIs En este enlace encontrarás la documentación de la API de una tienda de mascotas:
+# 1.3 Ejercicio 3: Tratamiento de datos en APIs En este enlace encontrarás la documentación de la API de una tienda de mascotas:
 					
-https://petstore.swagger.io/
+# https://petstore.swagger.io/
 					
-- Crea tu usuario mediante petición HTTP y posteriormente recupera sus datos llamando al servicio correspondiente.
+# - Crea tu usuario mediante petición HTTP y posteriormente recupera sus datos llamando al servicio correspondiente.
 
 utilizando el endpoint POST /user/createWithArray, envio el siguiente request (mejora: crear usuario en forma ordenada)
 
@@ -207,7 +207,7 @@ Para recuperar datos, utilizo el endpoint GET /user/{username}, mediante el sigu
 }
 
        
-- Recoge mediante petición HTTP, el JSON que retorna el endpoint /pet/findByStatus y lista mediante una función los nombres de las mascotas que se hayan vendido.
+# - Recoge mediante petición HTTP, el JSON que retorna el endpoint /pet/findByStatus y lista mediante una función los nombres de las mascotas que se hayan vendido.
 
 el JSON que retorna el endpoint es:
 [
@@ -257,7 +257,7 @@ el nombre de las mascotas que se vendieron, listadas mediante funcion, se consig
 									
 -  Puedes utilizar la estructura de datos que prefieras.
  													 						
-- Crea una clase cuyo constructor requiera de la estructura de datos anterior y realiza un método que pueda recorrerla para poder identificar cuantas mascotas se llaman igual.
+# - Crea una clase cuyo constructor requiera de la estructura de datos anterior y realiza un método que pueda recorrerla para poder identificar cuantas mascotas se llaman igual.
 using python, would be something like:
 
 import requests
@@ -278,7 +278,7 @@ class PetStoreAPI:
         else:
             return None
 
-# Example usage
+ Example usage
 if __name__ == "__main__":
     pet_store = PetStoreAPI()
 
